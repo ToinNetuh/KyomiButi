@@ -275,14 +275,14 @@ module.exports = kconfig = async (kill, message) => {
         if (isGroupMsg && autoSticker && isMedia && isImage && !isCmd) {
             const mediaData = await decryptMedia(message, uaOverride)
             const imageBase64 = `data:${mimetype};base64,${mediaData.toString('base64')}`
-            await kill.sendImageAsSticker(from, imageBase64, { author: 'https://chat.whatsapp.com/HwRvDjnMtyJL6uEhRLJ5yF', pack: 'Kiyomi/Toin', keepScale: true })
+            await kill.sendImageAsSticker(from, imageBase64, { author: ' https://chat.whatsapp.com/HwRvDjnMtyJL6uEhRLJ5yF  ', pack: 'Kiyomi/Toin', keepScale: true })
         }
 		
         // Auto-sticker de videos
 		if (isGroupMsg && autoSticker && isMedia && isVideo && !isCmd) {
 			const mediaData = await decryptMedia(message, uaOverride)
 			const videoBase64 = `data:${mimetype};base64,${mediaData.toString('base64')}`
-			await kill.sendMp4AsSticker(from, videoBase64, null, { stickerMetadata: true, pack: 'Kiyomi/Toin', author: 'https://chat.whatsapp.com/HwRvDjnMtyJL6uEhRLJ5yF', fps: 30, startTime: '00:00:00.0', endTime : '00:00:05.0', crop: false, loop: 0 })
+			await kill.sendMp4AsSticker(from, videoBase64, null, { stickerMetadata: true, pack: 'Kiyomi/Toin', author: ' https://chat.whatsapp.com/HwRvDjnMtyJL6uEhRLJ5yF ', fps: 30, startTime: '00:00:00.0', endTime : '00:00:05.0', crop: false, loop: 0 })
 		}
 
         // ANTI FLOOD PRIVADO
@@ -633,7 +633,7 @@ module.exports = kconfig = async (kill, message) => {
 			break
 			
 		 // LEMBRE-SE, REMOVER CREDITO E CRIME E PROIBIDO	
-		case 'tempest':
+		case 'Tempest':
 			if (isGroupMsg) return kill.reply(from, 'Interessado pelo grupo Bot? Use isso no PV!', id)
 			await kill.sendLinkWithAutoPreview(from, 'https://chat.whatsapp.com/HwRvDjnMtyJL6uEhRLJ5yF', '', id)
 			break
