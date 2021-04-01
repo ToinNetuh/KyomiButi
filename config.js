@@ -633,7 +633,7 @@ module.exports = kconfig = async (kill, message) => {
 			break
 			
 		 // LEMBRE-SE, REMOVER CREDITO E CRIME E PROIBIDO	
-		case 'Tempest':
+		case 'tempest':
 			if (isGroupMsg) return kill.reply(from, 'Interessado pelo grupo Bot? Use isso no PV!', id)
 			await kill.sendLinkWithAutoPreview(from, 'https://chat.whatsapp.com/HwRvDjnMtyJL6uEhRLJ5yF', '', id)
 			break
@@ -1800,6 +1800,13 @@ module.exports = kconfig = async (kill, message) => {
             await kill.sendTextWithMentions(from, `═✪〘 Você foi escolhido! 〙✪═ \n\n @${randme.id.replace(/@c.us/g, '')}\n\n═✪〘 Para: ${body.slice(8)} 〙✪═`)
             await sleep(2000)
             break
+			case 'top5':
+			if (!isGroupMsg) return kill.reply(from, mess.error.Gp, id)
+            const memran = await kill.getGroupMembers(groupId)
+            const randme = memran[Math.floor(Math.random() * memran.length)]
+            await kill.sendTextWithMentions(from, `═✪〘 Top 5 ${body.slice(8)}! 〙✪═ \n\n @${randme.id.replace(/@c.us/g, '')}\n @${randme.id.replace(/@c.us/g, '')}\n @${randme.id.replace(/@c.us/g, '')}\n @${randme.id.replace(/@c.us/g, '')} \n @${randme.id.replace(/@c.us/g, '')}\n @${randme.id.replace(/@c.us/g, '')}\n\n═✪〘 Top 5 ${body.slice(8)} 〙✪═`)
+            await sleep(2000)
+            break
 			
 			
         case 'kickall':
@@ -2608,6 +2615,16 @@ module.exports = kconfig = async (kill, message) => {
 				await kill.reply(from, `Você é ${lvpc}% ${guei} e ${lvrq}% ${twgui}.`, id)
             }
 			break
+			case 'pau':
+            gaak = body.trim().split(' ')
+    	    var pau = ["8=D Minusculor kskst", "8===D eeeh na mediar", "8========D Enormer eitar","8D Carai viado so a cabeçar kskst","8====> so a fimoser","na real ti legalmente nasceu sem pau","voce naum tem pau tem busetar"]
+    	    var guei1 = pau[Math.floor(Math.random() * pau.length)]
+			if (args.length == 1) {
+				await kill.sendTextWithMentions(from, gaak[1] + ' Seu pau e ' + guei1 + '.')
+            } else {
+				await kill.reply(from, `Seu pau e ` + guei1 + '.', id)
+            }
+			break
 			
 			
 		case 'chance':
@@ -3064,6 +3081,7 @@ module.exports = kconfig = async (kill, message) => {
 		case 'marcar':
 			await kill.sendTextWithMentions(from, `@${user.replace('@c.us', '')}`)
 			break
+			
 			
 			
 		case 'nivel':
