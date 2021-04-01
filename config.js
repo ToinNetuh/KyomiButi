@@ -1802,9 +1802,17 @@ module.exports = kconfig = async (kill, message) => {
             break
 			case 'top5':
 			if (!isGroupMsg) return kill.reply(from, mess.error.Gp, id)
-            const memran = await kill.getGroupMembers(groupId)
-            const randme = memran[Math.floor(Math.random() * memran.length)]
-            await kill.sendTextWithMentions(from, `═✪〘 Top 5 ${body.slice(8)}! 〙✪═ \n\n @${randme.id.replace(/@c.us/g, '')}\n @${randme.id.replace(/@c.us/g, '')}\n @${randme.id.replace(/@c.us/g, '')}\n @${randme.id.replace(/@c.us/g, '')} \n @${randme.id.replace(/@c.us/g, '')}\n @${randme.id.replace(/@c.us/g, '')}\n\n═✪〘 Top 5 ${body.slice(8)} 〙✪═`)
+            const memran1 = await kill.getGroupMembers(groupId)
+			const memran2 = await kill.getGroupMembers(groupId)
+			const memran3 = await kill.getGroupMembers(groupId)
+			const memran4 = await kill.getGroupMembers(groupId)
+			const memran5 = await kill.getGroupMembers(groupId)
+            const randme1 = memran1[Math.floor(Math.random() * memran1.length)]
+			const randme2 = memran2[Math.floor(Math.random() * memran2.length)]
+			const randme3 = memran3[Math.floor(Math.random() * memran3.length)]
+			const randme4 = memran4[Math.floor(Math.random() * memran4.length)]
+			const randme5 = memran5[Math.floor(Math.random() * memran5.length)]
+            await kill.sendTextWithMentions(from, `═✪〘 Top 5 ${body.slice(8)}! 〙✪═ \n\n @${randme1.id.replace(/@c.us/g, '')}\n @${randme2.id.replace(/@c.us/g, '')}\n @${randme3.id.replace(/@c.us/g, '')}\n @${randme4.id.replace(/@c.us/g, '')} \n @${randme5.id.replace(/@c.us/g, '')}\n\n═✪〘 Top 5 ${body.slice(8)} 〙✪═`)
             await sleep(2000)
             break
 			
