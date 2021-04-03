@@ -2639,6 +2639,28 @@ module.exports = kconfig = async (kill, message) => {
                     await kill.setMyName(setnem)
                     kill.sendTextWithMentions(from, `Obrigado pelo novo nome @${sender.id.replace('@c.us','')} 😘`)
                 break
+			case 'setstatus':
+                if (!isOwner) return kill.reply(from, `Este comando só pode ser usado pelo Toin!`, id)
+                    const setstat = body.slice(11)
+                    await kill.setMyStatus(setstat)
+                    kill.sendTextWithMentions(from, `Obrigado pelo novo status @${sender.id.replace('@c.us','')} 😘`)
+                break
+				case 'setpic':
+                    if (!isOwner) return kill.reply(from, `Este comando só pode ser usado pelo Toin!`, id)
+                    if (isMedia) {
+                        const mediaData = await decryptMedia(message)
+                        const imageBase64 = `data:${mimetype};base64,${mediaData.toString('base64')}`
+                        await kill.setProfilePic(imageBase64)
+                        kill.sendTextWithMentions(`Makasih @${sender.id.replace('@c.us','')} Foto Profilenye..`)
+                    } else if (quotedMsg && quotedMsg.type == 'image') {
+                        const mediaData = await decryptMedia(quotedMsg)
+                        const imageBase64 = `data:${quotedMsg.mimetype};base64,${mediaData.toString('base64')}`
+                        await kill.setProfilePic(imageBase64)
+                        kill.sendTextWithMentions(from, `Obrigado pelo novo perfil @${sender.id.replace('@c.us','')} 😘`)
+                    } else {
+                        kill.reply(from, `Formato errado! \n⚠️ Envie imagens com ${prefix}setpic`, id)
+                    }
+                    break
 			
 		case 'chance':
 			if (args.length == 0) return kill.reply(from, 'Defina algo para analisar.', id)
