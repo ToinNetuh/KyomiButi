@@ -2567,6 +2567,24 @@ module.exports = kconfig = async (kill, message) => {
 		case 'tapa':
 			const tapi = await axios.get('https://nekos.life/api/v2/img/slap')
 			await kill.sendFileFromUrl(from, tapi.data.url, '', '', id)
+		    break
+		case 'comer':
+            arqa = body.trim().split(' ')
+			if (args.length == 1) {
+				const persona = author.replace('@c.us', '')
+				toin.sendTextWithMentions(from, 'Eitar @' + persona + ' comeu ' + arqa[1] + ' !')
+            }else{
+                await toin.reply(from, 'Marque ~apenas uma~ a pessoa quem você quer comer hihihi', id)
+            }
+            break
+        case 'abraçar':
+            arqa = body.trim().split(' ')
+			if (args.length == 1) {
+				const persona = author.replace('@c.us', '')
+				toin.sendTextWithMentions(from, 'Eitar @' + persona + ' abraçou ' + arqa[1] + ' !')
+            }else{
+                await toin.reply(from, 'Marque ~apenas uma~ a pessoa quem você quer abraçar hihihi', id)
+            }
 			break
 			
 			
